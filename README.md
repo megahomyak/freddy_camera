@@ -11,6 +11,8 @@ This program will allow you to create a fake webcam and put the magnificient FRE
 
 ## Setting this up
 
+**UNFINISHED!!!!!!!!!!!!!!!!!!!!!!!!!**
+
 Advice: if you have trouble installing the thing, contact the developer, he will try to help. As of 16.08.2023, the developer only uses Telegram for communication, and his account URL is https://t.me/
 
 * Install Python from https://python.org

@@ -3,9 +3,10 @@ from PIL import Image
 import numpy
 import pyvirtualcam
 import sounddevice
+import platform
 
 SENSITIVITY = 2
-DEVICE_FILE = "/dev/video2"
+DEVICE_FILE = None if platform.platform() == "Windows" else "/dev/video111"
 
 def block():
     threading.Event().wait()

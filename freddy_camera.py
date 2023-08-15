@@ -1,16 +1,41 @@
+import threading
 from PIL import Image
+import numpy
+import pyvirtualcam
+import sounddevice
+
+SENSITIVITY = 2
+DEVICE_FILE = "/dev/video2"
+
+def block():
+    threading.Event().wait()
+
+width, height = Image.open("freddy_frames/1.png").size
 
 frames = [
-    Image.open(f"freddy_frames/{frame_num}.png").convert("RGB").resize((1280, 720))
+    numpy.array(Image.open(f"freddy_frames/{frame_num}.png"))
     for frame_num in range(1, 7)
 ]
 
-import colorsys
-import numpy
-import pyvirtualcam
-
-with pyvirtualcam.Camera(width=1280, height=720, fps=20, device="/dev/video2") as cam:
+with pyvirtualcam.Camera(width=width, height=height, fps=1, device="/dev/video2") as cam:
     print(f'Using virtual camera: {cam.device}')
-    while True:
-        cam.send(numpy.array(frames[0]))
-        cam.sleep_until_next_frame()
+
+    last_index = 0
+    cam.send(frames[last_index])
+
+    def process_sound(indata, _frames, _time, _status):
+        global last_index
+        volume_norm = numpy.linalg.norm(indata)
+        index = float(volume_norm) // SENSITIVITY
+        if index > last_index:
+            index = last_index + 1
+            if index == len(frames):
+                index -= 1
+        elif index < last_index:
+            index = last_index - 1
+        if index != last_index:
+            last_index = index
+            cam.send(frames[index])
+
+    sounddevice.InputStream(callback=process_sound, latency=0.1).start()
+    block()

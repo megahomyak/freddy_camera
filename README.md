@@ -11,6 +11,10 @@ This program will allow you to create a fake webcam and put the magnificient FRE
 ![Me being FREDDY FAZBEAR in a Discord call, jaw closed](screenshots/closed_jaw.png "Me being FREDDY FAZBEAR in a Discord call, jaw closed")
 ![Me being FREDDY FAZBEAR in a Discord call, jaw open](screenshots/open_jaw.png "Me being FREDDY FAZBEAR in a Discord call, jaw open")
 
+## Demonstration video
+
+https://m.youtube.com/watch?v=LgtxSnCMJFs
+
 ## Installation
 
 * Install Python (https://www.python.org/)

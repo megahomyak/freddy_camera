@@ -5,6 +5,7 @@ import pyvirtualcam
 import sounddevice
 import argparse
 import os
+import logging
 
 frames_path = os.path.dirname(__file__) + "/freddy_frames"
 
@@ -17,8 +18,17 @@ parser = argparse.ArgumentParser(
 parser.add_argument('-d', '--device', type=str, help="the camera device to use", default=None)
 parser.add_argument('-b', '--backend', type=str, help="the camera backend to use", default=None)
 parser.add_argument('-s', '--sensitivity', type=float, help="the sensitivity of the microphone", default=0.5)
+parser.add_argument('--debug', action="store_true", help="whether the debug logging is enabled or not")
+parser.set_defaults(debug=False)
 
 args = parser.parse_args()
+
+if args.debug:
+    log_level = logging.DEBUG
+else:
+    log_level = logging.WARNING
+
+logging.basicConfig(format="%(asctime)s;%(levelname)s;%(message)s", level=log_level)
 
 def block():
     threading.Event().wait()
@@ -31,6 +41,7 @@ frames = [
 ]
 
 with pyvirtualcam.Camera(width=width, height=height, fps=1, device=args.device, backend=args.backend) as cam:
+    logging.debug("Connected the camera using the device %s!", cam.device)
     last_index = 0
     cam.send(frames[last_index])
 
@@ -46,6 +57,7 @@ with pyvirtualcam.Camera(width=width, height=height, fps=1, device=args.device, 
             index = last_index - 1
         if index != last_index:
             last_index = index
+            logging.debug("Changing the frame to %s!", index)
             cam.send(frames[index])
 
     sounddevice.InputStream(callback=process_sound, latency=0.1).start()

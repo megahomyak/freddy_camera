@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "freddy_camera"
-version = "0.1.2"
+version = "0.1.3"
 description = ""
 authors = ["megahomyak <g.megahomyak@gmail.com>"]
 

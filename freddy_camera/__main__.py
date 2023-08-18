@@ -47,8 +47,6 @@ frames = [
     for frame_num in range(1, 7)
 ]
 
-CHECK_INTERVAL = 0.1
-
 with pyvirtualcam.Camera(width=width, height=height, fps=60, device=args.device, backend=args.backend) as cam:
     logging.debug("Connected the camera using the device %s!", cam.device)
     last_index = 0
@@ -69,5 +67,5 @@ with pyvirtualcam.Camera(width=width, height=height, fps=60, device=args.device,
             logging.debug("Changing the frame to %s!", index)
             cam.send(frames[index])
 
-    sounddevice.InputStream(callback=process_sound, latency=CHECK_INTERVAL).start()
+    sounddevice.InputStream(callback=process_sound, latency=0.1).start()
     block()

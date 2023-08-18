@@ -49,7 +49,7 @@ frames = [
 
 CHECK_INTERVAL = 0.1
 
-with pyvirtualcam.Camera(width=width, height=height, fps=round(1 / CHECK_INTERVAL), device=args.device, backend=args.backend) as cam:
+with pyvirtualcam.Camera(width=width, height=height, fps=60, device=args.device, backend=args.backend) as cam:
     logging.debug("Connected the camera using the device %s!", cam.device)
     last_index = 0
     cam.send(frames[last_index])

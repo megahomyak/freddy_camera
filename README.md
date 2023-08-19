@@ -37,7 +37,7 @@ https://youtube.com/watch?v=LgtxSnCMJFs
 
 **Warning**: restart the program when you change or enable your microphone (so that the program will use the newly connected microphone, otherwise there may be no audio input to the program)
 
-**Warning**: your microphone input is most likely accepted *raw* and definitely from your current main system microphone
+**Warning**: Freddy Camera uses your *main system microphone* and does *not* apply any filters, such as noise cancellation, to it!
 
 **Advice**: you don't have to have OBS open for the program to work!
 

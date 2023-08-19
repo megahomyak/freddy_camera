@@ -27,10 +27,10 @@ https://youtube.com/watch?v=LgtxSnCMJFs
 * **Linux, macOS**: execute `python3 -m pip install freddy_camera`. If this resulted in an error containing "No module named pip", execute `python3 -m ensurepip --default-pip`
 * **Windows**: execute `python -m pip install freddy_camera`. If this resulted in an error containing "No module named pip", execute `python -m ensurepip --default-pip`
 * **Windows, macOS**: install OBS (https://obsproject.com/)
-* **macOS**: start OBS
-* **macOS**: click "Start Virtual Camera"
-* **macOS**: click "Stop Virtual Camera"
-* **macOS**: close OBS
+* **Windows, macOS**: start OBS
+* **Windows, macOS**: click "Start Virtual Camera"
+* **Windows, macOS**: click "Stop Virtual Camera"
+* **Windows, macOS**: close OBS
 * **Linux**: install v4l2loopback (`sudo apt install v4l2loopback-dkms`, or, if you don't have `apt`, use the package manager of your distribution)
 
 ## Usage

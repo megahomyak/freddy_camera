@@ -41,9 +41,7 @@ width, height = Image.open(f"{frames_path}/1.png").size
 width, height = int(width * args.resolution_multiplier), int(height * args.resolution_multiplier)
 
 frames = [
-    numpy.array(
-        Image.open(f"{frames_path}/{frame_num}.png").resize((width, height))
-    )
+    numpy.array(Image.open(f"{frames_path}/{frame_num}.png").resize((width, height)))
     for frame_num in range(1, 7)
 ]
 

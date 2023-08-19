@@ -7,7 +7,7 @@ authors = ["megahomyak <g.megahomyak@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 Pillow = "^10.0.0"
-pyvirtualcam = "^0.10.2"
+pyvirtualcam = "0.9.1"
 sounddevice = "^0.4.6"
 
 [tool.poetry.dev-dependencies]

@@ -39,7 +39,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
 name = "pyvirtualcam"
-version = "0.10.2"
+version = "0.9.1"
 description = "Send frames to a virtual camera"
 category = "main"
 optional = false
@@ -65,7 +65,7 @@ numpy = ["numpy"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "fca738f05eef603173ee2c462fe292b8bce74a3a13242cc51f60a5ff0e715f27"
+content-hash = "b0631dc9132ae0cfef8d0416b436369a6ba5f9211b1fba318baa1b74f4e27b1f"
 
 [metadata.files]
 cffi = [
@@ -227,21 +227,18 @@ pycparser = [
     {file = "pycparser-2.21.tar.gz", hash = "sha256:e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"},
 ]
 pyvirtualcam = [
-    {file = "pyvirtualcam-0.10.2-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:6190c1ebfb3d0ddecccdf4a08617d743cac9ec521868f50f02f28d983e4b4213"},
-    {file = "pyvirtualcam-0.10.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:3dd383d37f05e0efba57d828efb2662218456de0787de9b9c398e6283aa6a60d"},
-    {file = "pyvirtualcam-0.10.2-cp310-cp310-win_amd64.whl", hash = "sha256:e9dcf818a7e438adbfcea3413f2ef1b3c14afc45798f7f7ffc394a9c1ff8c131"},
-    {file = "pyvirtualcam-0.10.2-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:791f0b0d2b2cd086cf99b85356e1d45918d443122eab417422a79b2646b00e57"},
-    {file = "pyvirtualcam-0.10.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d7d792bbaddfbad7997dd83fabe240cc412dfaaa3b19e0fd0e1810c308b1aadc"},
-    {file = "pyvirtualcam-0.10.2-cp311-cp311-win_amd64.whl", hash = "sha256:5c160a984f43194ebc949526a16943542f592e5b53f5b95b9fa1922d695f8c66"},
-    {file = "pyvirtualcam-0.10.2-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:e6451e38767967f0cc0db4dcb55e95a206117677c48287790d8a52f7b4de1717"},
-    {file = "pyvirtualcam-0.10.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:6bd7323ce08bc5c6d58c8d2e55c7c65cc2a3449e125fa08303558f004c25e5c9"},
-    {file = "pyvirtualcam-0.10.2-cp37-cp37m-win_amd64.whl", hash = "sha256:72ae1311c15f5941f975ca04e321a812703fd62a84241f3b083bec6d44f51e34"},
-    {file = "pyvirtualcam-0.10.2-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:4012a9ccf33a3662c7b8d98e652f2548c98f7a14ae77a21b18126b7a4d9740c7"},
-    {file = "pyvirtualcam-0.10.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:db04324d75f14722d7c1f54f321b61c2e68718ef6b952a1146b957369765dbe1"},
-    {file = "pyvirtualcam-0.10.2-cp38-cp38-win_amd64.whl", hash = "sha256:b7ef91b42634855340173560d1cccbc0e3b5bc6ab9b0721d2316d35184af5ca9"},
-    {file = "pyvirtualcam-0.10.2-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:891f40b37d5b7a8387a93713e9541cbb8d3ab4bb23304769274136ae908b61ee"},
-    {file = "pyvirtualcam-0.10.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:37d56d106dfbb24ca59e8809f3dbf1d836a214616174b74f7ede906e7f60e219"},
-    {file = "pyvirtualcam-0.10.2-cp39-cp39-win_amd64.whl", hash = "sha256:d7df101ad76665a0c4b9709cea2b5fc6d608ee75de83d7a53070beec4e7fe3ea"},
+    {file = "pyvirtualcam-0.9.1-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:51239623a6874d3c3cc5f170788c948ab41e6f4e254bb9dc3ab0fed60ba84584"},
+    {file = "pyvirtualcam-0.9.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:eab7ce52105973e02725d278f12a12360d2b335165609dcb7d55a70ce19802a0"},
+    {file = "pyvirtualcam-0.9.1-cp310-cp310-win_amd64.whl", hash = "sha256:08fd19714ff35200c1b609c03d3cfec26e09fbf3ec259b19dcc1b0b2e8084357"},
+    {file = "pyvirtualcam-0.9.1-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:000047eaedf46eed01ebd8dfdf772d99bb9a6b6a0e256b8ba725cfe43b086341"},
+    {file = "pyvirtualcam-0.9.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:bdb366187e317d08f0ca73c0a30ede76db3c90f421da95af7e7be76b404df255"},
+    {file = "pyvirtualcam-0.9.1-cp37-cp37m-win_amd64.whl", hash = "sha256:206a9b10435f6e2ebc7ee0856b88fd67f1a9d3fd97463c698f57fd282e584785"},
+    {file = "pyvirtualcam-0.9.1-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:196a021b9afd15de7b2c9eed6f1444d123897d3f014af567ee561c27caaadbf8"},
+    {file = "pyvirtualcam-0.9.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2fd524e7139581151480f6ba8688e615148ac471f0716dbf3337042e4b6a0669"},
+    {file = "pyvirtualcam-0.9.1-cp38-cp38-win_amd64.whl", hash = "sha256:c47cb64f810255134cbdd16134df162fea2cfabcdafd53131d438932b70a0f24"},
+    {file = "pyvirtualcam-0.9.1-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:a5a6088f15b6080438794b59ba21e6be949061b5848de504f91ccf444716c486"},
+    {file = "pyvirtualcam-0.9.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:035f7881629cb673d3e9167c2b801bb125e38673b711e0b4d2f6106f854d8ccd"},
+    {file = "pyvirtualcam-0.9.1-cp39-cp39-win_amd64.whl", hash = "sha256:c01d83700cd074c9195f79d8664e86c3afa8cd4895d163d2021215bcfcf3d2a2"},
 ]
 sounddevice = [
     {file = "sounddevice-0.4.6-py3-none-any.whl", hash = "sha256:5de768ba6fe56ad2b5aaa2eea794b76b73e427961c95acad2ee2ed7f866a4b20"},

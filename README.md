@@ -17,21 +17,6 @@ https://youtube.com/watch?v=LgtxSnCMJFs
 
 ## Installation
 
-### Concise instruction
-
-**Warning**: refer to the elaborate instruction if you're not **very** computer savvy
-
-* Install Python
-* `pip install freddy_camera`
-* **Windows, macOS**: install OBS
-* **macOS**: start OBS
-* **macOS**: click "Start Virtual Camera"
-* **macOS**: click "Stop Virtual Camera"
-* **macOS**: close OBS
-* **Linux**: install v4l2loopback
-
-### Elaborate instruction
-
 * Ensure that you have a stable internet connection for the duration of this tutorial
 * Open the command prompt for your respective operating system (if you don't know how, google it)
 * **Windows**: check if you have Python 3.8 or higher installed by opening the terminal and executing `python --version`

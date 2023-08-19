@@ -37,6 +37,10 @@ https://youtube.com/watch?v=LgtxSnCMJFs
 
 **Warning**: restart the program when you change or enable your microphone (so that the program will use the newly connected microphone, otherwise there may be no audio input to the program)
 
+**Warning**: your microphone input is most likely accepted *raw* and definitely from your current main system microphone
+
+**Advice**: you don't have to have OBS open for the program to work!
+
 * **Windows, macOS**: execute `python -m freddy_camera`
 * **Linux**, once per session: create a new virtual camera (`sudo modprobe v4l2loopback devices=1`)
 * **Linux**, once per session: a new camera should appear on the list (`ls /dev/ | grep video`, compare to the previous output), remember the name of this new camera

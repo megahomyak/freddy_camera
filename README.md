@@ -41,6 +41,7 @@ https://youtube.com/watch?v=LgtxSnCMJFs
 
 **Advice**: you don't have to have OBS open for the program to work!
 
+* Ensure that the virtual camera is not used anywhere
 * **Windows, macOS**: execute `python -m freddy_camera`
 * **Linux**, once per session: create a new virtual camera (`sudo modprobe v4l2loopback devices=1`)
 * **Linux**, once per session: a new camera should appear on the list (`ls /dev/ | grep video`, compare to the previous output), remember the name of this new camera

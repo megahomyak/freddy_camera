@@ -18,14 +18,11 @@ parser = argparse.ArgumentParser(
 parser.add_argument('-d', '--device', type=str, help="the camera device to use", default=None)
 parser.add_argument('-b', '--backend', type=str, help="the camera backend to use", default=None)
 parser.add_argument('-s', '--sensitivity', type=float, help="the sensitivity of the microphone", default=0.5)
-parser.add_argument('-r', '--resolution-multiplier', type=float, help="restriction: cannot be greater than 1", default=1)
+parser.add_argument('-r', '--resolution', help='either of: "small", "medium", "big", "original"', default="medium")
 parser.add_argument('--debug', action="store_true", help="whether the debug logging is enabled or not")
 parser.set_defaults(debug=False)
 
 args = parser.parse_args()
-
-if args.resolution_multiplier > 1:
-    raise Exception("resolution multiplier cannot be greater than 1")
 
 if args.debug:
     log_level = logging.DEBUG
@@ -37,8 +34,13 @@ logging.basicConfig(format="%(asctime)s;%(levelname)s;%(message)s", level=log_le
 def block():
     threading.Event().wait()
 
+try:
+    resolution_multiplier = {"small": 0.1, "medium": 0.25, "big": 0.5, "original": 1.0}[args.resolution]
+except KeyError:
+    raise Exception(f'invalid resolution: "{args.resolution}"') from None
+
 width, height = Image.open(f"{frames_path}/1.png").size
-width, height = int(width * args.resolution_multiplier), int(height * args.resolution_multiplier)
+width, height = int(width * resolution_multiplier), int(height * resolution_multiplier)
 
 frames = [
     numpy.array(Image.open(f"{frames_path}/{frame_num}.png").resize((width, height)))

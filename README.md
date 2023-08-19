@@ -33,7 +33,7 @@ https://youtube.com/watch?v=LgtxSnCMJFs
 ### Elaborate instruction
 
 * Ensure that you have a stable internet connection for the duration of this tutorial
-* Open the terminal (if you don't know how, google it)
+* Open the command prompt for your respective operating system (if you don't know how, google it)
 * **Windows**: check if you have Python 3.8 or higher installed by opening the terminal and executing `python --version`
 * **Windows**, if you don't have Python at all: install Python 3.8 or higher from https://www.python.org/, **be sure to check "Add Python to PATH" in the installer**, it will be available on one of the installation steps. Uninstall Python and install it again if you forgot to check that box
 * **Windows**, if you don't have the right version of Python: uninstall the current version and install a new one according to the step above

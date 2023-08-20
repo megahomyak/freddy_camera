@@ -64,8 +64,8 @@ numpy = ["numpy"]
 
 [metadata]
 lock-version = "1.1"
-python-versions = "^3.8"
-content-hash = "b0631dc9132ae0cfef8d0416b436369a6ba5f9211b1fba318baa1b74f4e27b1f"
+python-versions = ">=3.8,<3.11"
+content-hash = "ffbd8a8e9443ea7c286b5510211ffbb6b368a0bfec272876afca8f629d2ff155"
 
 [metadata.files]
 cffi = [

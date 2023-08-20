@@ -18,7 +18,6 @@ parser = argparse.ArgumentParser(
 parser.add_argument('-d', '--device', type=str, help="the camera device to use", default=None)
 parser.add_argument('-b', '--backend', type=str, help="the camera backend to use", default=None)
 parser.add_argument('-s', '--sensitivity', type=float, help="the sensitivity of the microphone", default=0.5)
-parser.add_argument('-r', '--resolution', help='either of: "small", "original"', default="small")
 parser.add_argument('--debug', action="store_true", help="whether the debug logging is enabled or not")
 parser.set_defaults(debug=False)
 
@@ -34,16 +33,10 @@ logging.basicConfig(format="%(asctime)s;%(levelname)s;%(message)s", level=log_le
 def block():
     threading.Event().wait()
 
-try:
-    resolution_multiplier = {"small": 0.25, "original": 1.0}[args.resolution]
-except KeyError:
-    raise Exception(f'invalid resolution: "{args.resolution}"') from None
-
 width, height = Image.open(f"{frames_path}/1.png").size
-width, height = int(width * resolution_multiplier), int(height * resolution_multiplier)
 
 frames = [
-    numpy.array(Image.open(f"{frames_path}/{frame_num}.png").resize((width, height)))
+    numpy.array(Image.open(f"{frames_path}/{frame_num}.png"))
     for frame_num in range(1, 7)
 ]
 

@@ -49,7 +49,6 @@ https://youtube.com/watch?v=LgtxSnCMJFs
 * In the settings of the application you're going to use, select the new camera
 * To stop the program, press Control+c on your keyboard
 * If your microphone seems too sensitive or too insensitive, check the section below
-* If other people's devices are lagging because of your webcam output (which is *extremely unlikely*, but might happen in some stupid video call services), check the section below
 
 ## Settings
 

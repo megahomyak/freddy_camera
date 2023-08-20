@@ -26,7 +26,8 @@ https://youtube.com/watch?v=LgtxSnCMJFs
 * **macOS**: it's likely that you already have Python 3.8, 3.9 or 3.10 installed. Check if you have it by executing `python3 --version` in your terminal. If you don't have the right version of Python, google how to install Python on macOS (and install Python 3.8, 3.9 or 3.10)
 * **Linux, macOS**: execute `python3 -m pip install freddy_camera`. If this resulted in an error containing "No module named pip", execute `python3 -m ensurepip --default-pip`
 * **Windows**: execute `python -m pip install freddy_camera`. If this resulted in an error containing "No module named pip", execute `python -m ensurepip --default-pip`
-* **Windows, macOS**: install OBS (https://obsproject.com/)
+* **macOS**: install OBS 26.1 or higher (https://obsproject.com/)
+* **Windows**: install OBS 26.0 or higher (https://obsproject.com/)
 * **Windows, macOS**: start OBS
 * **Windows, macOS**: click "Start Virtual Camera"
 * **Windows, macOS**: click "Stop Virtual Camera"

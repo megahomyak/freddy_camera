@@ -18,7 +18,7 @@ parser = argparse.ArgumentParser(
 parser.add_argument('-d', '--device', type=str, help="the camera device to use", default=None)
 parser.add_argument('-b', '--backend', type=str, help="the camera backend to use", default=None)
 parser.add_argument('-s', '--sensitivity', type=float, help="the sensitivity of the microphone", default=0.5)
-parser.add_argument('-r', '--resolution', help='either of: "small", "medium", "big", "original"', default="medium")
+parser.add_argument('-r', '--resolution', help='either of: "small", "original"', default="small")
 parser.add_argument('--debug', action="store_true", help="whether the debug logging is enabled or not")
 parser.set_defaults(debug=False)
 
@@ -35,7 +35,7 @@ def block():
     threading.Event().wait()
 
 try:
-    resolution_multiplier = {"small": 0.1, "medium": 0.25, "big": 0.5, "original": 1.0}[args.resolution]
+    resolution_multiplier = {"small": 0.25, "original": 1.0}[args.resolution]
 except KeyError:
     raise Exception(f'invalid resolution: "{args.resolution}"') from None
 

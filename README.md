@@ -19,11 +19,11 @@ https://youtube.com/watch?v=LgtxSnCMJFs
 
 * Ensure that you have a stable internet connection for the duration of this tutorial
 * Open the command prompt for your respective operating system (if you don't know how, google it)
-* **Windows**: check if you have Python 3.8 or higher installed by opening the terminal and executing `python --version`
-* **Windows**, if you don't have Python at all: install Python 3.8 or higher from https://www.python.org/, **be sure to check "Add Python to PATH" in the installer**, it will be available on one of the installation steps. Uninstall Python and install it again if you forgot to check that box
+* **Windows**: check if you have Python 3.8, 3.9 or 3.10 installed by opening the terminal and executing `python --version`
+* **Windows**, if you don't have Python at all: install Python 3.8, 3.9 or 3.10 from https://www.python.org/, **be sure to check "Add Python to PATH" in the installer**, it will be available on one of the installation steps. Uninstall Python and install it again if you forgot to check that box
 * **Windows**, if you don't have the right version of Python: uninstall the current version and install a new one according to the step above
-* **Linux**: it's likely that you already have Python 3.8 or higher installed. Check if you have it by executing `python3 --version` in your terminal. If you don't have the right version of Python, google how to install Python on your Linux distribution (and install Python 3.8 or higher)
-* **macOS**: it's likely that you already have Python 3.8 or higher installed. Check if you have it by executing `python3 --version` in your terminal. If you don't have the right version of Python, google how to install Python on macOS (and install Python 3.8 or higher)
+* **Linux**: it's likely that you already have Python 3.8, 3.9 or 3.10 installed. Check if you have it by executing `python3 --version` in your terminal. If you don't have the right version of Python, google how to install Python on your Linux distribution (and install Python 3.8, 3.9 or 3.10)
+* **macOS**: it's likely that you already have Python 3.8, 3.9 or 3.10 installed. Check if you have it by executing `python3 --version` in your terminal. If you don't have the right version of Python, google how to install Python on macOS (and install Python 3.8, 3.9 or 3.10)
 * **Linux, macOS**: execute `python3 -m pip install freddy_camera`. If this resulted in an error containing "No module named pip", execute `python3 -m ensurepip --default-pip`
 * **Windows**: execute `python -m pip install freddy_camera`. If this resulted in an error containing "No module named pip", execute `python -m ensurepip --default-pip`
 * **Windows, macOS**: install OBS (https://obsproject.com/)

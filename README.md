@@ -17,7 +17,7 @@ https://youtube.com/watch?v=LgtxSnCMJFs
 
 ## Installation
 
-**Warning**: this software is **highly UNlikely** to work on macOS, but you can try
+**Warning**: this software is **highly UNlikely** to work on macOS, but you can try. Something that might be of help: https://obsproject.com/wiki/MacOS-Virtual-Camera-Compatibility-Guide
 
 * Ensure that you have a stable internet connection for the duration of this tutorial
 * Open the command prompt for your respective operating system (if you don't know how, google it)

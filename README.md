@@ -19,6 +19,7 @@ https://youtube.com/watch?v=LgtxSnCMJFs
 
 **Warning**: this software is **highly UNlikely** to work on macOS, but you can try. Something that might be of help: https://obsproject.com/wiki/MacOS-Virtual-Camera-Compatibility-Guide
 
+* **macOS**: change your operating system if you can easily do so right now (you won't regret it). Otherwise, proceed and hope that it will work
 * Ensure that you have a stable internet connection for the duration of this tutorial
 * Open the command prompt for your respective operating system (if you don't know how, google it)
 * **Windows**: check if you have Python 3.8, 3.9 or 3.10 installed by opening the terminal and executing `python --version`

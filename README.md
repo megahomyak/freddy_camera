@@ -17,6 +17,8 @@ https://youtube.com/watch?v=LgtxSnCMJFs
 
 ## Installation
 
+**Warning**: this software is **highly UNlikely** to work on macOS, but you can try
+
 * Ensure that you have a stable internet connection for the duration of this tutorial
 * Open the command prompt for your respective operating system (if you don't know how, google it)
 * **Windows**: check if you have Python 3.8, 3.9 or 3.10 installed by opening the terminal and executing `python --version`

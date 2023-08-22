@@ -7,7 +7,7 @@ import argparse
 import os
 import logging
 
-frames_path = os.path.dirname(__file__) + "/freddy_frames"
+frames_path = os.path.dirname(__file__) + "/frames"
 
 parser = argparse.ArgumentParser(
     description="Replaces your camera with Withered Freddy that talks while you're talking",
@@ -19,6 +19,8 @@ parser.add_argument('-d', '--device', type=str, help="the camera device to use",
 parser.add_argument('-b', '--backend', type=str, help="the camera backend to use", default=None)
 parser.add_argument('-s', '--sensitivity', type=float, help="the sensitivity of the microphone", default=0.5)
 parser.add_argument('--debug', action="store_true", help="whether the debug logging is enabled or not")
+batch_names = ", ".join(f'"{name}"' for name in os.listdir(frames_path))
+parser.add_argument('--image-batch', '-i', help=f'the name of the image batch (available batches: {batch_names})', default="withered_freddy")
 parser.set_defaults(debug=False)
 
 args = parser.parse_args()
@@ -33,12 +35,20 @@ logging.basicConfig(format="%(asctime)s;%(levelname)s;%(message)s", level=log_le
 def block():
     threading.Event().wait()
 
-width, height = Image.open(f"{frames_path}/1.png").size
+image_batch_path = frames_path + f"/{args.image_batch}"
 
-frames = [
-    numpy.array(Image.open(f"{frames_path}/{frame_num}.png"))
-    for frame_num in range(1, 7)
-]
+try:
+    width, height = Image.open(f"{image_batch_path}/1.png").size
+except FileNotFoundError:
+    raise Exception(f'there is no "{args.image_batch}" image batch') from None
+
+frames = []
+
+for frame_num in range(1, 999999):
+    try:
+        frames.append(numpy.array(Image.open(f"{image_batch_path}/{frame_num}.png")))
+    except FileNotFoundError:
+        break
 
 with pyvirtualcam.Camera(width=width, height=height, fps=60, device=args.device, backend=args.backend) as cam:
     logging.debug("Connected the camera using the device %s!", cam.device)

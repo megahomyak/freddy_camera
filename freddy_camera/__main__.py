@@ -87,5 +87,5 @@ with pyvirtualcam.Camera(width=width, height=height, fps=60, device=args.video_d
         except ValueError:
             pass
 
-    sounddevice.InputStream(device=args.audio_device, callback=process_sound, latency=0.1).start()
+    sounddevice.InputStream(device=audio_device, callback=process_sound, latency=0.1).start()
     block()

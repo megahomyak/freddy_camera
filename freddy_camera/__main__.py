@@ -80,10 +80,12 @@ with pyvirtualcam.Camera(width=width, height=height, fps=60, device=args.video_d
             cam.send(frames[index])
 
     audio_device = args.audio_device
-    try:
-        audio_device = int(audio_device)
-    except ValueError:
-        pass
+    logging.debug("Audio device variable type: %s", type(audio_device))
+    if audio_device:
+        try:
+            audio_device = int(audio_device)
+        except ValueError:
+            pass
 
     sounddevice.InputStream(device=args.audio_device, callback=process_sound, latency=0.1).start()
     block()

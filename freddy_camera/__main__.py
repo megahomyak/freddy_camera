@@ -16,7 +16,7 @@ parser = argparse.ArgumentParser(
 )
     
 parser.add_argument('-vd', '--video-device', type=str, help="the camera device to use", default=None)
-parser.add_argument('-ad', '--audio-device', type=str, help="the microphone device to use", default=None)
+parser.add_argument('-ad', '--audio-device', type=str, help="the microphone device to use (index or name)", default=None)
 parser.add_argument('-b', '--backend', type=str, help="the camera backend to use", default=None)
 parser.add_argument('-s', '--sensitivity', type=float, help="the sensitivity of the microphone", default=0.5)
 parser.add_argument('--debug', action="store_true", help="whether the debug logging is enabled or not")
@@ -31,7 +31,7 @@ if args.show_audio_devices:
     devices: sounddevice.DeviceList = sounddevice.query_devices() # type: ignore
     for device in devices:
         if device["max_input_channels"] > 0:
-            print(device['name'])
+            print(f"Index: {device['index']}, name: \"{device['name']}\"")
     exit()
 
 if args.debug:

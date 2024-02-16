@@ -15,15 +15,24 @@ parser = argparse.ArgumentParser(
     prog="python -m freddy_camera",
 )
     
-parser.add_argument('-d', '--device', type=str, help="the camera device to use", default=None)
+parser.add_argument('-vd', '--video-device', type=str, help="the camera device to use", default=None)
+parser.add_argument('-ad', '--audio-device', type=str, help="the microphone device to use", default=None)
 parser.add_argument('-b', '--backend', type=str, help="the camera backend to use", default=None)
 parser.add_argument('-s', '--sensitivity', type=float, help="the sensitivity of the microphone", default=0.5)
 parser.add_argument('--debug', action="store_true", help="whether the debug logging is enabled or not")
+parser.add_argument('-sad', '--show-audio-devices', action="store_true", help="whether to show audio devices at startup and exit")
 batch_names = ", ".join(f'"{name}"' for name in os.listdir(frames_path))
-parser.add_argument('--image-batch', '-i', help=f'the name of the image batch (available batches: {batch_names})', default="withered_freddy")
+parser.add_argument('-i', '--image-batch', help=f'the name of the image batch (available batches: {batch_names})', default="withered_freddy")
 parser.set_defaults(debug=False)
 
 args = parser.parse_args()
+
+if args.show_audio_devices:
+    devices: sounddevice.DeviceList = sounddevice.query_devices() # type: ignore
+    for device in devices:
+        if device["max_input_channels"] > 0:
+            print(device['name'])
+    exit()
 
 if args.debug:
     log_level = logging.DEBUG
@@ -50,7 +59,7 @@ for frame_num in range(1, 999999):
     except FileNotFoundError:
         break
 
-with pyvirtualcam.Camera(width=width, height=height, fps=60, device=args.device, backend=args.backend) as cam:
+with pyvirtualcam.Camera(width=width, height=height, fps=60, device=args.video_device, backend=args.backend) as cam:
     logging.debug("Connected the camera using the device %s!", cam.device)
     last_index = 0
     cam.send(frames[last_index])
@@ -70,5 +79,5 @@ with pyvirtualcam.Camera(width=width, height=height, fps=60, device=args.device,
             logging.debug("Changing the frame to %s!", index)
             cam.send(frames[index])
 
-    sounddevice.InputStream(callback=process_sound, latency=0.1).start()
+    sounddevice.InputStream(device=args.audio_device, callback=process_sound, latency=0.1).start()
     block()
